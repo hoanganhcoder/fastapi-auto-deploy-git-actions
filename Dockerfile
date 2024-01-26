@@ -7,7 +7,7 @@ COPY ./requirements.txt /testpush/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /testpush/requirements.txt
 
 COPY ./app /testpush/app
-
+COPY ./nginx /testpush/nginx
 EXPOSE 80 
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
