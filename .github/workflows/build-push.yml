@@ -32,7 +32,11 @@ jobs:
           --file Dockerfile \
           --tag hoanganhcoder/testpush:'${{github.sha}}' \
           --push .
+    - name : Start api
+      run : docker run -d --name testpush -p 80:80 '${{github.sha}}'
 
+    - name : test
+      run : curl localhost/
     env:
       DOCKER_CLI_EXPERIMENTAL: enabled
       DOCKER_BUILDKIT: 1
