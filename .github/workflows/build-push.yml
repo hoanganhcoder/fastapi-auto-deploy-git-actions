@@ -21,12 +21,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: olayinkaadebisi/fastapiwithnginx
+          images: hoanganhcoder/testpush
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: olayinkaadebisi/fastapiwithnginx:latest
+          tags: hoanganhcoder/testpush:latest
           labels: ${{ steps.meta.outputs.labels }}
