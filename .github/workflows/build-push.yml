@@ -30,7 +30,7 @@ jobs:
         docker buildx create --use
         docker buildx build \
           --file Dockerfile \
-          --tag hoanganhcode/testpush:'${{github.sha}}' \
+          --tag hoanganhcoder/testpush:'${{github.sha}}' \
           --push .
 
     env:
